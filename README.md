@@ -15,7 +15,7 @@ linked from [this AWS user guide](https://docs.aws.amazon.com/AmazonECR/latest/u
 docker pull quiltdata/lambda
 
 docker run --rm -v $(pwd)/create_table:/io -t \
-	-e SETUP_DIR -e GIT_REPO quiltdata/lambda \
+	-e GIT_REPO quiltdata/lambda \
 	bash /io/package.sh
 ```
 
