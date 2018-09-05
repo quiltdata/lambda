@@ -1,6 +1,6 @@
 # Build AWS Lambda deployment packages with Docker
 
-## Blog post with latest tips
+## Blog post (includes tips on reducing package size)
 
 [An easier way to build AWS Lambda deployment packages — with Docker instead of EC2](https://blog.quiltdata.com/an-easier-way-to-build-lambda-deployment-packages-with-docker-instead-of-ec2-9050cd486ba8)
 
@@ -45,9 +45,3 @@ Use a [personal access token](https://github.com/settings/tokens):
 ```sh
 git clone https://${TOKEN}@github.com/USER/REPO
 ```
-
-## Optimizations to reduce .zip size
-Possible but not tried in this repo:
-* [Delete *.py](https://github.com/ralienpp/simplipy/blob/master/README.md)
-* [Profile code and only retain files that are used](https://medium.com/@mojodna/slimming-down-lambda-deployment-zips-b3f6083a1dff) 
-
