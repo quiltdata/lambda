@@ -1,4 +1,4 @@
-# Script AWS Lambda deployment packages with Docker
+# Build AWS Lambda deployment packages with Docker
 
 ## Why?
 
