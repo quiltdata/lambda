@@ -2,7 +2,7 @@
 
 mkdir tmp411
 git clone ${GIT_REPO}
-python3 -m pip install ${SETUP_DIR} -t tmp411
+python3 -m pip install REPO/DIR -t tmp411
 
 # Untested optimization to reduce deployment size
 # See https://github.com/ralienpp/simplipy/blob/master/README.md
