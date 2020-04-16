@@ -17,6 +17,9 @@ RUN python3 -m pip install pip==18.1
 # Requirements copied form lambda Python 3.6, but not in base image
 RUN pip install -r quilt/requirements.txt
 
+# Required to build numpy, but not listed as a dependency.
+RUN python3 -m pip install Cython
+
 # Make it possible to build numpy:
 # https://github.com/numpy/numpy/issues/14147
 ENV CFLAGS=-std=c99
