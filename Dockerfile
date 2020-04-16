@@ -16,6 +16,9 @@ RUN python3 -m pip install --upgrade pip \
     # but it's not in the amazonlinux image
     && python3 -m pip install boto3
 
+# Required to build numpy, but not listed as a dependency.
+RUN python3 -m pip install Cython
+
 # Make it possible to build numpy:
 # https://github.com/numpy/numpy/issues/14147
 ENV CFLAGS=-std=c99
