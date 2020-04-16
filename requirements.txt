@@ -1,6 +1,7 @@
 # from `pip freeze` under Python 3.6 lambda image 16-Apr-2020
 boto3==1.12.22
 botocore==1.15.22
+Cython==0.29.16 
 docutils==0.15.2
 jmespath==0.9.5
 python-dateutil==2.8.1
