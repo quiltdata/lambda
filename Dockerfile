@@ -1,4 +1,4 @@
-FROM amazonlinux:2017.03
+FROM amazonlinux:2018.03
 
 # Need to set "ulimit -n" to a small value to stop yum from hanging:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1715254#c1
@@ -11,13 +11,13 @@ RUN ulimit -n 1024 && yum -y update && yum -y install \
     zip \
     && yum clean all
 
-RUN python3 -m pip install --upgrade pip \
-    # boto3 is available to lambda processes by default,
-    # but it's not in the amazonlinux image
-    && python3 -m pip install boto3
+COPY requirements.txt quilt/requirements.txt
 
-# Required to build numpy, but not listed as a dependency.
-RUN python3 -m pip install Cython
+RUN python3 -m pip install pip==18.1
+
+# Requirements copied from lambda Python 3.6, but not in base image
+# (Plus Cython which is a build-time requirement for numpy)
+RUN python3 -m pip install -r quilt/requirements.txt
 
 # Make it possible to build numpy:
 # https://github.com/numpy/numpy/issues/14147
