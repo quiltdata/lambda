@@ -1,4 +1,5 @@
 FROM amazonlinux:2018.03
+
 COPY requirements.txt quilt/requirements.txt
 
 # Need to set "ulimit -n" to a small value to stop yum from hanging:
