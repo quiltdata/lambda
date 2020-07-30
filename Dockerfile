@@ -3,16 +3,16 @@ FROM amazonlinux:2018.03
 # Need to set "ulimit -n" to a small value to stop yum from hanging:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1715254#c1
 RUN ulimit -n 1024 && yum -y update && yum -y install \
-    git \
-    gcc \
-    python36 \
-    python36-pip \
-    python36-devel \
-	jq \
-	nano \
-	unzip \
-    zip \
-    && yum clean all
+  git \
+  gcc \
+  python36 \
+  python36-pip \
+  python36-devel \
+  jq \
+  nano \
+  unzip \
+  zip \
+  && yum clean all
 
 COPY requirements.txt quilt/requirements.txt
 
