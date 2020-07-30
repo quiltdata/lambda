@@ -8,6 +8,9 @@ RUN ulimit -n 1024 && yum -y update && yum -y install \
     python36 \
     python36-pip \
     python36-devel \
+	jq \
+	nano \
+	unzip \
     zip \
     && yum clean all
 
