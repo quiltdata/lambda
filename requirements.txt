@@ -1,10 +1,11 @@
-# from `pip freeze` under Python 3.6 lambda image 16-Apr-2020
-boto3==1.12.22
-botocore==1.15.22
-Cython==0.29.21
-docutils==0.15.2
-jmespath==0.9.5
-python-dateutil==2.8.1
-s3transfer==0.3.3
-six==1.14.0
-urllib3==1.25.8
+# from `pip freeze` under Python 3.8 lambda image 01-Sep-2021
+boto3==1.17.100
+botocore==1.20.100
+Cython==0.29.24
+jmespath==0.10.0
+python-dateutil==2.8.2
+rapid-client==0.0.0
+s3transfer==0.4.2
+six==1.16.0
+urllib3==1.26.6
+

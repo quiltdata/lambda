@@ -1,13 +1,13 @@
-FROM amazonlinux:2018.03
+FROM amazonlinux:2
 
 # Need to set "ulimit -n" to a small value to stop yum from hanging:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1715254#c1
 RUN ulimit -n 1024 && yum -y update && yum -y install \
 	git \
 	gcc \
-	python36 \
-	python36-pip \
-	python36-devel \
+	python38 \
+	python38-pip \
+	python38-devel \
 	jq \
 	nano \
 	unzip \
@@ -16,7 +16,7 @@ RUN ulimit -n 1024 && yum -y update && yum -y install \
 
 COPY requirements.txt quilt/requirements.txt
 
-RUN python3 -m pip install pip==18.1
+RUN python3 -m pip install pip==21.1.1
 
 # Requirements copied from lambda Python 3.6, but not in base image
 # (Plus Cython which is a build-time requirement for numpy)
