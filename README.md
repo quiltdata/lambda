@@ -14,9 +14,13 @@ is clumsy
 linked from [this AWS user guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/amazon_linux_container_image.html))
 
 ## [Tags](https://hub.docker.com/r/quiltdata/lambda/tags)
-* `build` - introduced to build wheels per [#2](https://github.com/quiltdata/lambda/pull/2). In theory this should not affect how the environment functions, but in practice use image id `823205fae3ed` if you want to be as close to the official lambda environment as possible.
+* `build` - introduced to build wheels per [#2](https://github.com/quiltdata/lambda/pull/2).
+In theory this should not affect how the environment functions,
+but in practice use image id `823205fae3ed`
+if you want to be as close to the official lambda environment as possible.
+On 9/1/21 the `build` tag has been updated to support the Python3.8 runtime (only).
 
-## Example: Python 3.6 deployment package
+## Example: Python 3.8 deployment package
 
 ```sh
 docker pull quiltdata/lambda
