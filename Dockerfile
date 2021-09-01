@@ -2,17 +2,22 @@ FROM amazonlinux:2
 
 # Need to set "ulimit -n" to a small value to stop yum from hanging:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1715254#c1
-RUN ulimit -n 1024 && yum -y update && yum -y install \
-	git \
-	gcc \
-	python38 \
-	python38-pip \
-	python38-devel \
-	jq \
-	nano \
-	unzip \
-	zip \
-	&& yum clean all
+# See the following for installing 3.8 via yum on amazon-linux
+# https://techviewleo.com/how-to-install-python-on-amazon-linux/
+RUN ulimit -n 1024 \
+	&& amazon-linux-extras enable python3.8 && yum clean metadata \
+	&& yum -y update && yum -y install \
+	  git \
+	  gcc \
+	  python38 \
+	  python38-devel \
+	  jq \
+	  nano \
+	  unzip \
+	  zip \
+	  && yum clean all
+
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 
 COPY requirements.txt quilt/requirements.txt
 
