@@ -1,5 +1,9 @@
 # Build AWS Lambda deployment packages with Docker
 
+## Update
+Amazon now provides images for Lambda runtimes on Docker Hub.
+See [amazon/aws-lambda-python](https://hub.docker.com/r/amazon/aws-lambda-python).
+
 ## Blog post (includes tips on reducing package size)
 
 [An easier way to build AWS Lambda deployment packages — with Docker instead of EC2](https://blog.quiltdata.com/an-easier-way-to-build-lambda-deployment-packages-with-docker-instead-of-ec2-9050cd486ba8)
