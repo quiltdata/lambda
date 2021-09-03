@@ -1,16 +1,15 @@
 FROM amazon/aws-lambda-python:3.8
+
 # Need to set "ulimit -n" to a small value to stop yum from hanging:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1715254#c1
-# See the following for installing 3.8 via yum on amazon-linux
-# https://techviewleo.com/how-to-install-python-on-amazon-linux/
 RUN ulimit -n 1024 && yum -y update && yum -y install \
-	  git \
-	  gcc \
-	  jq \
-	  nano \
-	  unzip \
-	  zip \
-	  && yum clean all
+	git \
+	gcc \
+	jq \
+	nano \
+	unzip \
+	zip \
+	&& yum clean all
 
 COPY requirements.txt quilt/requirements.txt
 
