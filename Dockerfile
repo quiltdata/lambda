@@ -21,3 +21,4 @@ RUN python3 -m pip install -r quilt/requirements.txt
 # Make it possible to build numpy:
 # https://github.com/numpy/numpy/issues/14147
 ENV CFLAGS=-std=c99
+
