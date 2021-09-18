@@ -2,7 +2,9 @@
 
 ## Update
 Amazon now provides images for Lambda runtimes on Docker Hub.
-See [amazon/aws-lambda-python](https://hub.docker.com/r/amazon/aws-lambda-python).
+See [amazon/aws-sam-cli-emulation-image-python](https://hub.docker.com/r/amazon/aws-sam-cli-emulation-image-python3.7).
+It is important to use this specific set of images to avoid missing binaries,
+which can occur with similar Python 3.x containers from amazon/.
 
 ## Blog post (includes tips on reducing package size)
 
