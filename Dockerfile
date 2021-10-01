@@ -1,4 +1,4 @@
-FROM amazon/aws-lambda-python:3.8
+FROM amazon/aws-sam-cli-emulation-image-python3.7
 
 # Need to set "ulimit -n" to a small value to stop yum from hanging:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1715254#c1
